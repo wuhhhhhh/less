@@ -12,3 +12,43 @@
 .radius(@value){
 	border-radius: @value;
 } 
+.margin-t(@margin:10px){
+	margin-top: @margin;
+}
+.div1{
+	.section();
+}
+.section(@width:300px){
+	width: @width;
+	/*float:@float;*/
+	box-shadow:0 0 5px #666;
+	padding:20px;
+	background-color:#FFF;
+	.radius(10px);
+	.margin-t;
+}
+.sanjiao-model(@_;@color;@width:5px){
+	border-color: @color transparent transparent transparent;
+	border-style: solid;
+	border-width: @width;
+}
+.sanjiao-model(right;@color;@width:5px){
+	border-color: transparent transparent transparent @color;
+	border-style: solid;
+	border-width: @width;
+}
+.sanjiao-model(top;@color;@width:5px){
+	border-color: transparent transparent @color transparent;
+	border-style: solid;
+	border-width: @width;
+}
+.sanjiao-model(left;@color;@width:5px){
+	border-color: transparent @color transparent transparent;
+	border-style: solid;
+	border-width: @width;
+}
+.sanjiao{
+	.sanjiao-model(bottom;#cc8800;10px);
+	width: 0;
+	height: 0;
+}
